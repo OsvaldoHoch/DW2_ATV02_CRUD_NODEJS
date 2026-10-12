@@ -1,0 +1,64 @@
+<%- include ('partials/header.ejs') %>
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Cadastrar Produtos</h1>
+            </div>
+            <div class="card-body">
+                <form action="/produtos/cadastrar" method="POST">
+                    <label for="nome">Nome do Produto:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Insira o nome do produto" class="form-control" required>
+
+                    <label for="preco">Preço do produto:</label>
+                    <input type="text" id="preco" name="preco" placeholder="Insira o preço do produto" class="form-control" required>
+                    
+                    <label for="categoria">Categoria do produto:</label>
+                    <input type="text" id="categoria" name="categoria" placeholder="Insira a categoria do produto" class="form-control" required>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button type="reset" class="btn btn-danger">Limpar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Produtos</h1>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Categoria</th>
+                            <th style="text-align: center;" colspan="2">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% produtos.forEach(produto => { %>
+                            <tr>
+                                <td><%= produto.id %></td>
+                                <td><%= produto.nome %></td>
+                                <td><%= produto.preco.toLocaleString('pt-br', {style: 'currency' , currency: 'BRL'}) %></td>
+                                <td><%= produto.categoria %></td>
+                                <td>
+                                    <a href="/produtos/editar/<%=produto.id%>" class="btn btn-warning">Editar</a>
+                                </td>
+                                <td>
+                                    <a href="/produtos/excluir/<%=produto.id%>" class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir o produto <%= produto.nome %>')">Excluir</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/footer.ejs') %>

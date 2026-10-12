@@ -1,0 +1,31 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <div class="container">
+        <div class="jumbotron">
+            <br>
+            <h1 class="display-5">Bem-vindo(a) ao painel administrativo da <strong>Rarduer!</strong></h1>
+            <p class="lead">Através desse painel é possível listar as tabelas de clientes e produtos.</p>
+            <hr class="my-4">
+            <p class="currentDate"></p>
+            </p>         
+            <p class="lead">
+              <a class="btn btn-outline-info btn-lg" href="/produtos" role="button">Verificar produtos</a>
+            </p>
+          </div>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h1>Para onde deseja ir?</h1>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/clientes">Clientes</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<%- include ('partials/footer.ejs') %>
