@@ -6,3 +6,8 @@ Aplicação utilizando NodeJS e EJS para criação de uma loja teste com CRUD pe
 npm i ejs express mysql nodemon sequelize
 npm i node@26.11.1 nodejs@0.0.0
 ´´´
+
+* **Para comandos de terminal:** \`\`\`bash ou \`\`\`sh
+* **Para estilização:** \`\`\`css ou \`\`\`html
+* **Para dados:** \`\`\`json ou \`\`\`yaml
+* **Para programação:** \`\`\`javascript, \`\`\`typescript, \`\`\`python, \`\`\`java
